@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Ria</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:#0f1012;
+  color:#f3f0eb;
+  overflow-x:hidden;
+}
+
+button,
+input{
+  font-family:inherit;
+}
+
+.hidden{
+  display:none!important;
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+#lockScreen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(205,170,125,.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(180,130,100,.08),
+      transparent 30%
+    ),
+    #0f1012;
+}
+
+.lock-box{
+  width:min(420px,100%);
+  padding:45px 30px;
+  text-align:center;
+
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.1);
+
+  background:rgba(255,255,255,.035);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.4);
+}
+
+.lock-icon{
+  font-size:45px;
+  margin-bottom:20px;
+  color:#d8b58d;
+}
+
+.lock-box h1{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.lock-box p{
+  font-size:14px;
+  opacity:.55;
+  margin-bottom:25px;
+  line-height:1.7;
+}
+
+#passwordInput{
+  width:100%;
+  padding:15px;
+
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+
+  background:rgba(0,0,0,.25);
+  color:white;
+
+  text-align:center;
+  outline:none;
+
+  margin-bottom:12px;
+}
+
+.unlock-btn{
+  width:100%;
+  padding:14px;
+
+  border:none;
+  border-radius:14px;
+
+  background:#b99670;
+  color:white;
+
+  cursor:pointer;
+  font-size:15px;
+}
+
+.error{
+  color:#dca58c;
+  font-size:13px;
+  margin-top:12px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#mainContent{
+  display:none;
+  width:100%;
+}
+
+section{
+  min-height:100vh;
+  padding:90px 25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+}
+
+.container{
+  width:min(900px,100%);
+  margin:auto;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:10px;
+  opacity:.45;
+  margin-bottom:15px;
+}
+
+.title{
+  font-size:clamp(42px,8vw,78px);
+  line-height:1;
+  margin-bottom:25px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(200,160,110,.15),
+      transparent 35%
+    ),
+    #0f1012;
+}
+
+.hero-small{
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:.45;
+  margin-bottom:25px;
+}
+
+.hero-title{
+  font-size:clamp(50px,11vw,105px);
+  line-height:.9;
+  margin-bottom:30px;
+}
+
+.hero-title span{
+  color:#c8a77d;
+  font-style:italic;
+}
+
+.hero-text{
+  max-width:600px;
+  margin:auto;
+  line-height:1.9;
+  font-size:16px;
+  opacity:.65;
+}
+
+.scroll{
+  position:absolute;
+  bottom:30px;
+
+  font-size:10px;
+  letter-spacing:3px;
+  opacity:.35;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section{
+  background:#151619;
+}
+
+.message-card{
+  margin-top:40px;
+
+  padding:40px;
+
+  border-left:2px solid #b99670;
+  border-radius:0 25px 25px 0;
+
+  background:rgba(255,255,255,.035);
+
+  line-height:2;
+  font-size:17px;
+
+  color:rgba(255,255,255,.8);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.2);
+}
+
+
+/* =========================
+   APPRECIATION
+========================= */
+
+.appreciation-section{
+  background:#0f1012;
+}
+
+.appreciation-list{
+  margin-top:40px;
+
+  display:grid;
+  gap:15px;
+}
+
+.appreciation-item{
+  padding:25px 28px;
+
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;
+
+  background:rgba(255,255,255,.035);
+
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+
+  transition:.3s ease;
+}
+
+.appreciation-item:hover{
+  transform:translateX(6px);
+  border-color:rgba(200,167,125,.3);
+}
+
+.number{
+  color:#c8a77d;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.appreciation-text{
+  line-height:1.7;
+  color:rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section{
+  background:#151619;
+}
+
+.gallery{
+  margin-top:40px;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:20px;
+}
+
+.gallery-item{
+  overflow:hidden;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.035);
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.gallery-item.wide{
+  grid-column:span 2;
+}
+
+.gallery-image{
+  overflow:hidden;
+  cursor:zoom-in;
+}
+
+.gallery-image img{
+  width:100%;
+  height:320px;
+
+  object-fit:cover;
+  display:block;
+
+  transition:transform .6s ease;
+}
+
+.gallery-image:hover img{
+  transform:scale(1.05);
+}
+
+.memory-info{
+  padding:20px 22px 23px;
+}
+
+.memory-date{
+  font-size:10px;
+
+  text-transform:uppercase;
+  letter-spacing:3px;
+
+  color:#c8a77d;
+
+  margin-bottom:9px;
+}
+
+.memory-caption{
+  font-size:16px;
+  line-height:1.6;
+  color:rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.94);
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:25px;
+
+  z-index:9999;
+
+  cursor:zoom-out;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+
+  object-fit:contain;
+
+  border-radius:12px;
+
+  cursor:zoom-in;
+
+  transition:.3s ease;
+}
+
+.lightbox img.zoomed{
+  transform:scale(1.7);
+  cursor:zoom-out;
+}
+
+.lightbox-close{
+  position:absolute;
+
+  top:20px;
+  right:25px;
+
+  width:45px;
+  height:45px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.2);
+
+  background:rgba(255,255,255,.08);
+
+  color:white;
+
+  font-size:28px;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section{
+  background:#0f1012;
+  text-align:center;
+}
+
+.letter-envelope{
+  max-width:520px;
+
+  margin:40px auto 0;
+
+  padding:50px 30px;
+
+  border-radius:28px;
+
+  border:1px solid rgba(255,255,255,.09);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.02)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.3);
+
+  transition:.5s ease;
+}
+
+.envelope-icon{
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+.letter-envelope h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.letter-envelope p{
+  opacity:.5;
+  margin-bottom:28px;
+}
+
+.open-letter-btn{
+  padding:14px 25px;
+
+  border:none;
+  border-radius:50px;
+
+  background:#b99670;
+  color:white;
+
+  cursor:pointer;
+
+  font-size:14px;
+}
+
+.hidden-letter{
+  display:none;
+}
+
+.hidden-letter.show-letter{
+  display:block;
+  animation:letterOpen .8s ease forwards;
+}
+
+.letter{
+  max-width:700px;
+
+  margin:40px auto 0;
+
+  padding:45px;
+
+  border-radius:25px;
+
+  background:#f1ece5;
+
+  color:#28231f;
+
+  text-align:left;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.35);
+}
+
+.letter p{
+  line-height:2;
+  margin-bottom:18px;
+}
+
+.signature{
+  margin-top:35px;
+
+  text-align:right;
+
+  font-style:italic;
+
+  color:#80654c;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-section{
+  background:#151619;
+  text-align:center;
+}
+
+.music-player{
+  max-width:520px;
+
+  margin:40px auto 0;
+
+  padding:35px 30px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.music-disc{
+  width:145px;
+  height:145px;
+
+  margin:0 auto 28px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      #151515 0px,
+      #151515 2px,
+      #202020 3px,
+      #101010 5px
+    );
+
+  border:4px solid #080808;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.5),
+    inset 0 0 20px rgba(255,255,255,.04);
+
+  transition:transform .3s ease;
+}
+
+.music-disc::before{
+  content:"";
+
+  width:58px;
+  height:58px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #151515 0 7%,
+      #b99670 8% 55%,
+      #7d6245 56% 100%
+    );
+
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.08);
+}
+
+.music-disc::after{
+  content:"AH";
+
+  position:absolute;
+
+  width:58px;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  font-family:Arial,sans-serif;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+
+  color:rgba(255,255,255,.8);
+}
+
+.music-disc.playing{
+  animation:vinylSpin 4s linear infinite;
+}
+
+.music-title{
+  font-size:20px;
+}
+
+.music-subtitle{
+  margin-top:6px;
+
+  font-size:12px;
+
+  opacity:.45;
+}
+
+.music-button{
+  width:52px;
+  height:52px;
+
+  margin-top:24px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#b99670;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:18px;
+}
+
+.music-progress{
+  margin-top:22px;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  font-size:10px;
+
+  opacity:.55;
+}
+
+.music-progress input{
+  flex:1;
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending{
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(200,167,125,.15),
+      transparent 35%
+    ),
+    #0f1012;
+}
+
+.ending-message{
+  max-width:750px;
+
+  margin:0 auto;
+
+  font-size:clamp(28px,5vw,52px);
+
+  line-height:1.4;
+}
+
+.footer-mark{
+  margin-top:30px;
+
+  color:#c8a77d;
+
+  font-size:25px;
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart{
+  position:fixed;
+
+  pointer-events:none;
+
+  font-size:15px;
+
+  opacity:.2;
+
+  animation:floatUp 7s linear forwards;
+
+  z-index:10;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floatUp{
+
+  from{
+    transform:
+      translateY(100vh)
+      rotate(0deg);
+  }
+
+  to{
+    transform:
+      translateY(-10vh)
+      rotate(360deg);
+
+    opacity:0;
+  }
+
+}
+
+@keyframes vinylSpin{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+@keyframes letterOpen{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateY(35px)
+      scale(.96);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+  section{
+    padding:75px 20px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-item.wide{
+    grid-column:span 1;
+  }
+
+  .gallery-image img{
+    height:280px;
+  }
+
+  .message-card{
+    padding:25px;
+  }
+
+  .letter{
+    padding:30px 22px;
+  }
+
+  .music-disc{
+    width:125px;
+    height:125px;
+  }
+
+  .music-disc::before,
+  .music-disc::after{
+    width:50px;
+    height:50px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CUSTOMER DATA
+========================= -->
+
+<script>
+
+const DATA = {
+
+  /* =========================================
+     ✏️ EDIT BAGIAN INI SAJA
+  ========================================= */
+
+  password:"1234",
+
+  name:"Someone Special",
+
+  intro:
+    "Maaf aku telat ngirim, hehe .",
+
+  message:
+    "I hope you can be strong in living this life, whatever problems come your way, i know you can face them. Whatever path it is, i wish you the best.",
+
+  appreciation:[
+
+    "Thank you for always being there.",
+
+    "Thank you for the little things you probably don't even realize.",
+
+    "Thank you for making ordinary moments feel special.",
+
+    "Thank you for being someone I can count on.",
+
+    "And most importantly, thank you for simply being you."
+
+  ],
+
+  letter:[
+
+    "Hi you,",
+
+    "Happy Birthday Ryaa.",
+
+    "Bahagia selalu yaa.. .",
+
+    "Apapun yang diinginkan tercapai, kuat dalam situasi apapun, dilancarkan rezeki nya, dilapangkan selalu pintu maaf yang seluas luasnya, Aamiin.",
+
+    "Any moment with you is always special for me, thank you for always being strong, i look forward to your future succes."
+
+  ],
+
+  signature:
+    "Someone who appreciates you",
+
+  media:[
+
+    {
+      file:"assets/images/photo1.jpg",
+      date:"A little memory",
+      caption:"One of the moments I'm grateful to have."
+    },
+
+    {
+      file:"assets/images/photo2.jpg",
+      date:"Another memory",
+      caption:"A moment worth keeping."
+    },
+
+    {
+      file:"assets/images/photo3.jpg",
+      date:"One more",
+      caption:"i'm so proud of you for all you've done to get here!."
+    },
+
+    {
+      file:"assets/images/photo4.jpg",
+      date:"Today",
+      caption:"And there are still more memories to make."
+    }
+
+  ],
+
+  songTitle:
+    "Beautiful Dream",
+
+  songFile:
+    "assets/music/appreciation.mp3",
+
+  ending:
+    "Some people make life a little better simply by being in it. You're one of them. ♡"
+
+};
+
+</script>
+
+
+<!-- =========================
+     PASSWORD
+========================= -->
+
+<div id="lockScreen">
+
+  <div class="lock-box">
+
+    <div class="lock-icon">
+      ♡
+    </div>
+
+    <h1>
+      A Little Something
+    </h1>
+
+    <p>
+      This place was made to remind you
+      of how appreciated you are.
+    </p>
+
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Enter password"
+    >
+
+    <button
+      class="unlock-btn"
+      onclick="unlock()">
+
+      Open ♡
+
+    </button>
+
+    <div
+      id="error"
+      class="error">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main id="mainContent">
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-small">
+        A little reminder for
+      </div>
+
+      <div class="hero-title">
+
+        Happy Birthday to
+        <br>
+
+        <span>You.</span>
+
+      </div>
+
+      <p
+        class="hero-text"
+        id="intro">
+      </p>
+
+    </div>
+
+    <div class="scroll">
+      SCROLL TO CONTINUE ↓
+    </div>
+
+  </section>
+
+
+  <!-- MESSAGE -->
+
+  <section class="message-section">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Just something I wanted to say
+      </div>
+
+      <h2 class="title">
+        Hope .
+      </h2>
+
+      <div
+        class="message-card"
+        id="message">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- APPRECIATION -->
+
+  <section class="appreciation-section">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Things I appreciate
+      </div>
+
+      <h2 class="title">
+        More than you know.
+      </h2>
+
+      <div
+        class="appreciation-list"
+        id="appreciationList">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+
+  <section class="gallery-section">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Little memories
+      </div>
+
+      <h2 class="title">
+        Moments worth keeping.
+      </h2>
+
+      <div
+        class="gallery"
+        id="gallery">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LETTER -->
+
+  <section class="letter-section">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        A letter for you
+      </div>
+
+      <h2 class="title">
+        Something I wanted
+        you to read.
+      </h2>
+
+      <div
+        class="letter-envelope"
+        id="letterEnvelope">
+
+        <div class="envelope-icon">
+          💌
+        </div>
+
+        <h3>
+          A little letter
+        </h3>
+
+        <p>
+          I wrote something
+          just for you.
+        </p>
+
+        <button
+          class="open-letter-btn"
+          id="openLetterBtn">
+
+          Open Letter ♡
+
+        </button>
+
+      </div>
+
+
+      <div
+        class="letter hidden-letter"
+        id="letterBox">
+
+        <div id="letterContent">
+        </div>
+
+        <div
+          class="signature"
+          id="signature">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MUSIC -->
+
+  <section class="music-section">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        A little soundtrack
+      </div>
+
+      <h2 class="title">
+        For this moment.
+      </h2>
+
+      <div class="music-player">
+
+        <div
+          class="music-disc"
+          id="musicDisc">
+
+          ♫
+
+        </div>
+
+        <div
+          class="music-title"
+          id="songTitle">
+        </div>
+
+        <div class="music-subtitle">
+          a little song for this moment ♡
+        </div>
+
+        <button
+          class="music-button"
+          id="musicButton">
+
+          ▶
+
+        </button>
+
+        <div class="music-progress">
+
+          <span id="currentTime">
+            0:00
+          </span>
+
+          <input
+            type="range"
+            id="musicProgress"
+            value="0"
+            min="0"
+            max="100"
+          >
+
+          <span id="duration">
+            0:00
+          </span>
+
+        </div>
+
+        <audio
+          id="audioPlayer"
+          preload="metadata">
+        </audio>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ENDING -->
+
+  <section class="ending">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        One last thing
+      </div>
+
+      <div
+        class="ending-message"
+        id="ending">
+      </div>
+
+      <div class="footer-mark">
+        ♡
+      </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div
+  class="lightbox"
+  id="lightbox">
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose">
+
+    ×
+
+  </button>
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Memory">
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   APPLY DATA
+========================= */
+
+document.getElementById("intro")
+.textContent = DATA.intro;
+
+document.getElementById("message")
+.textContent = DATA.message;
+
+document.getElementById("signature")
+.textContent = "— " + DATA.signature;
+
+document.getElementById("songTitle")
+.textContent = DATA.songTitle;
+
+document.getElementById("ending")
+.textContent = DATA.ending;
+
+
+/* =========================
+   APPRECIATION LIST
+========================= */
+
+const appreciationList =
+  document.getElementById("appreciationList");
+
+DATA.appreciation.forEach(
+  (text,index)=>{
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "appreciation-item";
+
+    item.innerHTML = `
+
+      <div class="number">
+        ${String(index+1).padStart(2,"0")}
+      </div>
+
+      <div class="appreciation-text">
+        ${text}
+      </div>
+
+    `;
+
+    appreciationList.appendChild(item);
+
+  }
+);
+
+
+/* =========================
+   GALLERY
+========================= */
+
+const gallery =
+  document.getElementById("gallery");
+
+DATA.media.forEach(
+  (item,index)=>{
+
+    const wrapper =
+      document.createElement("div");
+
+    wrapper.className =
+      "gallery-item";
+
+    if(index === 0){
+      wrapper.classList.add("wide");
+    }
+
+    const mediaBox =
+      document.createElement("div");
+
+    mediaBox.className =
+      "gallery-image";
+
+    const img =
+      document.createElement("img");
+
+    img.src =
+      item.file;
+
+    img.alt =
+      item.caption;
+
+    mediaBox.appendChild(img);
+
+
+    const info =
+      document.createElement("div");
+
+    info.className =
+      "memory-info";
+
+    info.innerHTML = `
+
+      <div class="memory-date">
+        ${item.date}
+      </div>
+
+      <div class="memory-caption">
+        ${item.caption}
+      </div>
+
+    `;
+
+    wrapper.appendChild(mediaBox);
+
+    wrapper.appendChild(info);
+
+    gallery.appendChild(wrapper);
+
+  }
+);
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById("lightboxImage");
+
+const lightboxClose =
+  document.getElementById("lightboxClose");
+
+
+document
+.querySelectorAll(".gallery-item img")
+.forEach(img=>{
+
+  img.addEventListener(
+    "click",
+    function(e){
+
+      e.stopPropagation();
+
+      lightboxImage.src =
+        this.src;
+
+      lightbox.classList.add(
+        "active"
+      );
+
+      lightboxImage.classList.remove(
+        "zoomed"
+      );
+
+    }
+  );
+
+});
+
+
+lightboxImage.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    this.classList.toggle(
+      "zoomed"
+    );
+
+  }
+);
+
+
+lightbox.addEventListener(
+  "click",
+  ()=>{
+
+    lightbox.classList.remove(
+      "active"
+    );
+
+    lightboxImage.classList.remove(
+      "zoomed"
+    );
+
+  }
+);
+
+
+lightboxClose.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    lightbox.classList.remove(
+      "active"
+    );
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  e=>{
+
+    if(e.key === "Escape"){
+
+      lightbox.classList.remove(
+        "active"
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================
+   LETTER
+========================= */
+
+const letterEnvelope =
+  document.getElementById(
+    "letterEnvelope"
+  );
+
+const letterBox =
+  document.getElementById(
+    "letterBox"
+  );
+
+const openLetterBtn =
+  document.getElementById(
+    "openLetterBtn"
+  );
+
+const letterContent =
+  document.getElementById(
+    "letterContent"
+  );
+
+
+DATA.letter.forEach(
+  text=>{
+
+    const p =
+      document.createElement("p");
+
+    p.textContent =
+      text;
+
+    letterContent.appendChild(p);
+
+  }
+);
+
+
+openLetterBtn.addEventListener(
+  "click",
+  ()=>{
+
+    letterEnvelope.style.opacity =
+      "0";
+
+    letterEnvelope.style.transform =
+      "translateY(-20px)";
+
+    setTimeout(()=>{
+
+      letterEnvelope.style.display =
+        "none";
+
+      letterBox.classList.add(
+        "show-letter"
+      );
+
+    },450);
+
+  }
+);
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+const audioPlayer =
+  document.getElementById(
+    "audioPlayer"
+  );
+
+const musicButton =
+  document.getElementById(
+    "musicButton"
+  );
+
+const musicDisc =
+  document.getElementById(
+    "musicDisc"
+  );
+
+const musicProgress =
+  document.getElementById(
+    "musicProgress"
+  );
+
+const currentTime =
+  document.getElementById(
+    "currentTime"
+  );
+
+const duration =
+  document.getElementById(
+    "duration"
+  );
+
+
+audioPlayer.src =
+  DATA.songFile;
+
+
+function formatTime(seconds){
+
+  if(!isFinite(seconds)){
+    return "0:00";
+  }
+
+  const minutes =
+    Math.floor(seconds/60);
+
+  const secs =
+    Math.floor(seconds%60)
+    .toString()
+    .padStart(2,"0");
+
+  return `${minutes}:${secs}`;
+
+}
+
+
+musicButton.addEventListener(
+  "click",
+  ()=>{
+
+    if(audioPlayer.paused){
+
+      audioPlayer.play();
+
+      musicButton.textContent =
+        "❚❚";
+
+      musicDisc.classList.add(
+        "playing"
+      );
+
+    }else{
+
+      audioPlayer.pause();
+
+      musicButton.textContent =
+        "▶";
+
+      musicDisc.classList.remove(
+        "playing"
+      );
+
+    }
+
+  }
+);
+
+
+audioPlayer.addEventListener(
+  "loadedmetadata",
+  ()=>{
+
+    duration.textContent =
+      formatTime(
+        audioPlayer.duration
+      );
+
+  }
+);
+
+
+audioPlayer.addEventListener(
+  "timeupdate",
+  ()=>{
+
+    currentTime.textContent =
+      formatTime(
+        audioPlayer.currentTime
+      );
+
+    if(audioPlayer.duration){
+
+      musicProgress.value =
+        (
+          audioPlayer.currentTime /
+          audioPlayer.duration
+        ) * 100;
+
+    }
+
+  }
+);
+
+
+musicProgress.addEventListener(
+  "input",
+  ()=>{
+
+    if(audioPlayer.duration){
+
+      audioPlayer.currentTime =
+        (
+          musicProgress.value / 100
+        ) *
+        audioPlayer.duration;
+
+    }
+
+  }
+);
+
+
+audioPlayer.addEventListener(
+  "ended",
+  ()=>{
+
+    musicButton.textContent =
+      "▶";
+
+    musicDisc.classList.remove(
+      "playing"
+    );
+
+    musicProgress.value =
+      0;
+
+  }
+);
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+function unlock(){
+
+  const input =
+    document.getElementById(
+      "passwordInput"
+    ).value;
+
+  const error =
+    document.getElementById(
+      "error"
+    );
+
+
+  if(input === DATA.password){
+
+    document
+      .getElementById("lockScreen")
+      .classList.add("hidden");
+
+    document
+      .getElementById("mainContent")
+      .style.display = "block";
+
+    window.scrollTo(0,0);
+
+    createHeart();
+
+  }else{
+
+    error.textContent =
+      "Wrong password. Try again ♡";
+
+  }
+
+}
+
+
+/* =========================
+   ENTER PASSWORD
+========================= */
+
+document
+.getElementById("passwordInput")
+.addEventListener(
+  "keydown",
+  e=>{
+
+    if(e.key === "Enter"){
+      unlock();
+    }
+
+  }
+);
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart(){
+
+  const heart =
+    document.createElement("div");
+
+  heart.className =
+    "heart";
+
+  heart.textContent =
+    Math.random() > .5
+      ? "♡"
+      : "♥";
+
+  heart.style.left =
+    Math.random()*100 + "vw";
+
+  heart.style.fontSize =
+    (10 + Math.random()*15) + "px";
+
+  document.body.appendChild(
+    heart
+  );
+
+  setTimeout(
+    ()=>{
+      heart.remove();
+    },
+    7000
+  );
+
+}
+
+
+setInterval(
+  createHeart,
+  1800
+);
+
+
+</script>
+
+</body>
+</html>
